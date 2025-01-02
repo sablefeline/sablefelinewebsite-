@@ -1,6 +1,6 @@
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-
+import { Analytics } from "@vercel/analytics/react"
 const theme = createTheme({
   palette: {
     mode: 'light',
@@ -21,6 +21,7 @@ function MyApp({ Component, pageProps }) {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Component {...pageProps} />
+      <Analytics/>
     </ThemeProvider>
   );
 }
