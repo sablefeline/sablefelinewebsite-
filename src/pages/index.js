@@ -7,6 +7,8 @@ import Button from '@mui/material/Button';
 import Slider from '@mui/material/Slider';
 import Image from 'next/image';
 import Grid from '@mui/material/Grid2';
+import ButtonGroup from '@mui/material/ButtonGroup';
+
 export default function Home() {
   return (
     <Container>
@@ -29,7 +31,10 @@ export default function Home() {
                     <Typography variant="body2" style={{color: 'purple'}}>gay ^</Typography>
                 </Grid>
             </Grid>
-            <Button variant="contained" color="primary" href="https://youtu.be/cAcI_DQZpj0?si=LrNFnykvqpTCfp5d">Cat button</Button>
+            <ButtonGroup variant="contained" aria-label="outlined primary button group"  sx={{borderRadius:"50px"}}>
+            <Button variant="contained" color="primary" href="https://youtu.be/cAcI_DQZpj0?si=LrNFnykvqpTCfp5d"  sx={{borderRadius:"50px"}}>See the cringe</Button>
+            <Button variant="contained" color="primary" href="/catgenerator"  sx={{borderRadius:"50px"}}>Cat button</Button>
+            </ButtonGroup>
             <Slider />
             <Typography variant="body2" sx={{background: "radial-gradient(circle, rgba(0,99,255,1) 0%, rgba(0,99,255,1) 44%, rgba(0,0,0,1) 100%)", borderRadius:"50px", color:"white", padding:"10px"}}>Cattest slider</Typography>
             <Typography variant="caption" gutterBottom sx={{ display: 'block' }}>

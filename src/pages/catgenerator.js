@@ -7,6 +7,29 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import CircularProgress from '@mui/material/CircularProgress';
+import { keyframes } from '@mui/system'; // Import keyframes for animations
+
+// Define keyframes for animations
+const bounce = keyframes`
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+`;
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
 
 export default function CatGenerator() {
   const [catImage, setCatImage] = useState(null);
@@ -34,7 +57,7 @@ export default function CatGenerator() {
         <Button 
           variant="contained" 
           onClick={generateCat} 
-          sx={{ mb: 4 }}
+          sx={{ mb: 4, animation: `${bounce} 2s infinite` }} // Apply bounce animation to button
           disabled={loading}
         >
           {loading ? 'Loading...' : 'Generate New Cat'}
@@ -51,7 +74,7 @@ export default function CatGenerator() {
                 component="img"
                 image={catImage}
                 alt="Random cat"
-                sx={{ maxHeight: 400, objectFit: 'contain' }}
+                sx={{ maxHeight: 400, objectFit: 'contain', animation: `${fadeIn} 1s ease-in` }} // Apply fadeIn animation to image
               />
             ) : (
               <Typography variant="body1">
